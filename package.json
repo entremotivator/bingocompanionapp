@@ -3,9 +3,9 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"dev": "npx parcel index.html -p 3000 --open",
-		"build": "npx parcel build index.html",
-		"start": "npm run build",
+		"dev": "parcel index.html -p 3000 --open",
+		"build": "parcel build index.html --dist-dir dist",
+		"start": "parcel index.html",
 		"cypress:open": "cypress open",
 		"cy:run": "cypress run --spec cypress/e2e/!(all.cy.js)"
 	},
@@ -20,9 +20,14 @@
 	},
 	"devDependencies": {
 		"@parcel/transformer-sass": "^2.7.0",
+		"@parcel/optimizer-svgo": "^2.7.0",
 		"cypress": "^10.4.0",
 		"http-proxy-middleware": "^2.0.2",
 		"parcel": "^2.7.0",
-		"process": "^0.11.10"
+		"process": "^0.11.10",
+		"svgo": "^2.8.0"
+	},
+	"engines": {
+		"node": ">=16"
 	}
 }
